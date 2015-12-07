@@ -15,6 +15,9 @@ group :production do
   gem "puma"
 end
 
+# For MailChimp
+gem "gibbon"
+
 # Use SCSS for stylesheets
 gem "sass-rails"
 gem "bootstrap-sass", "~> 3.3"
@@ -54,7 +57,7 @@ gem "awesome_print"
 group :development, :test do
   # Access an IRB console on exceptions page and /console in development
   gem "web-console"
-
+  gem 'dotenv-rails'
   ################################################################################
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem "spring"

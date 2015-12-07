@@ -41,6 +41,20 @@ export function submitCommentFailure(error) {
   };
 }
 
+export function createSubscriberSuccess(email) {
+  return {
+    type: actionTypes.CREATE_SUBSCRIBER_SUCCESS,
+    email,
+  };
+}
+
+export function createSubscriberFailure(error) {
+  return {
+    type: actionTypes.CREATE_SUBSCRIBER_FAILURE,
+    error,
+  };
+}
+
 export function fetchComments() {
   return dispatch => {
     dispatch(setIsFetching());
@@ -61,6 +75,18 @@ export function submitComment(comment) {
         .submitComment(comment)
         .then(res => dispatch(submitCommentSuccess(res.data)))
         .catch(res => dispatch(submitCommentFailure(res.data)))
+    );
+  };
+}
+
+export function createSubscriber(email) {
+  return dispatch => {
+    dispatch(setIsSaving());
+    return (
+      listservManager
+        .createSubscriber(email)
+        .then(res => dispatch(createSubscriberSuccess(res.data)))
+        .catch(res => dispatch(createSubscriberFailure(res.data)))
     );
   };
 }

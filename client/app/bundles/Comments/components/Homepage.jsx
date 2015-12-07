@@ -1,6 +1,23 @@
 import React, { PropTypes } from 'react';
+import mcapi from 'Mailchimp-api';
+let mc = new mcapi.Mailchimp('0546eab4596f76b70fa178fbc8130dcb-us12'); 
 
 class Homepage extends React.Component {
+	constructor(props, context) {
+		super(props, context);
+		this.state = {email: "test@test.com"};
+	}
+	handleClick() {
+		mc.lists.subscribe({
+	       id: '3714db55cc',
+	       email: {
+	         email: 'test@test.com'
+	       }
+	     }, function(data) {
+	       console.log(data);
+	     }
+     	);
+	}
     render() {
         return (
         	<div className="homepage-hero">
@@ -18,7 +35,7 @@ class Homepage extends React.Component {
 	        			<p>Get early access:</p>
 			            	<div className="form-group">
 				            	<input placeholder="Email" className="input input-lg form-control" />
-				            	<a href="#" className="btn btn-lg btn-block btn-primary hvr-hollow">sign up</a>
+				            	<a href="#" onClick={this.handleClick.bind(this)} className="btn btn-lg btn-block btn-primary hvr-hollow">sign up</a>
 			        		</div>
 		        		</div>
 	        		</div>
