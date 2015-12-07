@@ -22,7 +22,7 @@ class CommentScreen extends React.Component {
           <a href="http://www.railsonmaui.com">
             <h3 className="open-sans-light">
               <div className="logo" />
-              Example of styling using image-url and Open Sans Light custom font
+              Example of styling using image-und Open Sans Light custom font
             </h3>
           </a>
           <a href="https://twitter.com/railsonmaui">

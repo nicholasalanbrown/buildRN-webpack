@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import { IndexLink, Link } from 'react-router';
+import Navigation from '../components/Navigation';
 
 export default class Layout extends React.Component {
 
@@ -10,19 +11,7 @@ export default class Layout extends React.Component {
   render() {
     return (
       <section>
-        <header>
-          <ul>
-            <li>
-              <IndexLink to="/" activeClassName="active">Comments (Root URL)</IndexLink>
-            </li>
-            <li>
-              <Link to="/react-router" activeClassName="active">Test React Router ('/react-router')</Link>
-            </li>
-            <li>
-              <Link to="/react-router/redirect" activeClassName="active">Test Redirect (url to '/react-router/redirect' which goes to root '/')</Link>
-            </li>
-          </ul>
-        </header>
+        <Navigation />
         {this.props.children}
       </section>
     );

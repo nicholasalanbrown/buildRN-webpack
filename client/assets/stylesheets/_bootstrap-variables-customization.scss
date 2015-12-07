@@ -13,11 +13,54 @@ $font-size-base: 15px;
 // Libsass, which is used by the webpack sass loader, does not support font-url()
 // so we use url() instead. This is a known issue.
 @font-face {
-  font-family: 'OpenSans-Light';
+  font-family: 'Fira Sans';
   @if $rails {
-    src: font-url('OpenSans-Light.ttf') format('truetype');
+    src: font-url('FiraSans-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
   } @else {
-    src: url('assets/fonts/OpenSans-Light.ttf') format('truetype');
+    src: url('assets/fonts/FiraSans-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+  }
+}
+
+@font-face {
+  font-family: 'Fira Sans';
+  @if $rails {
+    src: font-url('FiraSans-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  } @else {
+    src: url('assets/fonts/FiraSans-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
+}
+
+@font-face {
+  font-family: 'Fira Sans';
+  @if $rails {
+    src: font-url('FiraSans-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+  } @else {
+    src: url('assets/fonts/FiraSans-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+  }
+}
+
+@font-face {
+  font-family: 'Fira Sans';
+  @if $rails {
+    src: font-url('FiraSans-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+  } @else {
+    src: url('assets/fonts/FiraSans-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
   }
 }
 

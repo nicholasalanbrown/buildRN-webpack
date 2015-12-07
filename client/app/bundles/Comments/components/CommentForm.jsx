@@ -9,7 +9,7 @@ import ReactCSSTransitionGroup from 'react/lib/ReactCSSTransitionGroup';
 import _ from 'lodash';
 
 const emptyComment = { author: '', text: '' };
-const textPlaceholder = 'Say something using markdown...';
+const textPlaceholder = 'Say something using masskdown...';
 
 class CommentForm extends React.Component {
   constructor(props, context) {
