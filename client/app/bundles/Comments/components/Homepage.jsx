@@ -3,10 +3,12 @@ import React, { PropTypes } from 'react';
 class Homepage extends React.Component {
 	constructor(props, context) {
 		super(props, context);
+	    this.handleSubmit = this.handleSubmit.bind(this);
 	    this.handleClick = this.handleClick.bind(this);
 		this.state = {email: "test@test.com"};
 	}
-	handleClick() {
+	handleSubmit(e) {
+		e.preventDefault();
 		this.props.openModal();
 	}
     render() {
@@ -24,10 +26,12 @@ class Homepage extends React.Component {
 	            	<div className="signup-form row">
 	            		<div className="col-md-4 col-md-offset-4">
 	        			<p>Get early access:</p>
-			            	<div className="form-group">
-				            	<input placeholder="Email" className="input input-lg form-control" />
-				            	<a href="#" onClick={this.handleClick.bind(this)} className="btn btn-lg btn-block btn-primary hvr-hollow">sign up</a>
-			        		</div>
+	        				<form onSubmit={this.handleSubmit.bind(this)} id="signup">
+				            	<div className="form-group">
+					            	<input placeholder="Email" className="input input-lg form-control" />
+					            	<a href="#" type="submit" onClick={this.handleSubmit.bind(this)} className="btn btn-lg btn-block btn-primary hvr-hollow">sign up</a>
+				        		</div>
+			        		</form>
 		        		</div>
 	        		</div>
 	        	</div>
