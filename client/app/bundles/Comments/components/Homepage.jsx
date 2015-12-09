@@ -4,7 +4,6 @@ class Homepage extends React.Component {
 	constructor(props, context) {
 		super(props, context);
 	    this.handleSubmit = this.handleSubmit.bind(this);
-	    this.handleClick = this.handleClick.bind(this);
 		this.state = {email: "test@test.com"};
 	}
 	handleSubmit(e) {
