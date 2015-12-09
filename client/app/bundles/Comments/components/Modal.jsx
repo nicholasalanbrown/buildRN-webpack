@@ -3,11 +3,14 @@ import React, { PropTypes } from 'react';
 class Modal extends React.Component {
 	constructor(props, context) {
 		super(props, context);
+    	this._handleClick = this._handleClick.bind(this);
 		this.state = {};
 	}
-	handleClick() {
+	_handleClick() {
+		this.props.closeModal();
 	}
     render() {
+    	console.log(this.props);
         return (
         	<div className="modal-container">
 	        	<div className="modal-backdrop">
@@ -19,7 +22,7 @@ class Modal extends React.Component {
     					<img className="twitter-icon" src="i../../assets/images/twitter.png" />
 						<img className="facebook-icon" src="i../../assets/images/facebook.png" />
 				      </div>
-				      <a href="#" className="btn btn-lg btn-default">close</a>
+				      <a href="#" className="btn btn-lg btn-default" onClick={this._handleClick.bind(this)}>close</a>
 	        		</div>
 	        	</div>
         	</div>

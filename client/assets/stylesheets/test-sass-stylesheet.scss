@@ -327,6 +327,11 @@ nav ul {
     background: #ffffff;
     padding: 13px 60px 13px 60px;
     border: 2px solid $inactive;
+    &:hover, &:active {
+        background: #ffffff;
+        color: $brand-primary;
+        border-color: $brand-primary;
+    }
 }
 
 .modal-background {
