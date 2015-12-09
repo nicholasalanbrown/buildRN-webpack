@@ -6,7 +6,6 @@ import Modal from '../components/Modal';
 export default class Layout extends React.Component {
   constructor(props, context) {
     super(props, context);
-    this._closeModal = this._closeModal.bind(this);
     this.state = {showModal: true};
   }
   static propTypes = {
@@ -16,7 +15,8 @@ export default class Layout extends React.Component {
     return (
       <section>
         <Navigation />
-        {this.state.showModal ? <Modal closeModal={() => this.setState({showModal: false}) } /> : null}
+        {this.state.showModal ? 
+          <Modal closeModal={() => this.setState({showModal: false}) } /> : null}
         {this.props.children}
       </section>
     );

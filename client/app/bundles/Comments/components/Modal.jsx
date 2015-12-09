@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 class Modal extends React.Component {
 	constructor(props, context) {
@@ -6,14 +7,15 @@ class Modal extends React.Component {
     	this._handleClick = this._handleClick.bind(this);
 		this.state = {};
 	}
-	_handleClick() {
+	_handleClick(e) {
+		e.stopPropagation();
 		this.props.closeModal();
 	}
     render() {
-    	console.log(this.props);
         return (
         	<div className="modal-container">
 	        	<div className="modal-backdrop">
+    	      	<ReactCSSTransitionGroup transitionName="modal" transitionAppear={true} transitionAppearTimeout={0} transitionEnterTimeout={0} transitionLeaveTimeout={0}>
 	        		<div className="modal-background">
 				      <h3>Thanks for signing up!</h3>
 				      <h4>We’re just putting the finishing touches on Build React Native - we’ll let you know when it’s ready.</h4>
@@ -24,6 +26,7 @@ class Modal extends React.Component {
 				      </div>
 				      <a href="#" className="btn btn-lg btn-default" onClick={this._handleClick.bind(this)}>close</a>
 	        		</div>
+	        		</ReactCSSTransitionGroup>
 	        	</div>
         	</div>
         )
