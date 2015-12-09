@@ -50,6 +50,8 @@ gem "autoprefixer-rails"
 
 gem "awesome_print"
 
+gem "font-awesome-rails"
+
 # jquery as the JavaScript library has been moved under /client and managed by npm.
 # It is critical to not include any of the jquery gems when following this pattern or
 # else you might have multiple jQuery versions.

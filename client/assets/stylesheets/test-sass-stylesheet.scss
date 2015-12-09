@@ -1,15 +1,12 @@
 // Proof of concept of loading css from webpack
 // partial defines the $comment-text-color
 @import 'test-sass-stylesheet-partial';
+
 $brand-primary: #1F7CDC;
 $primary-text: #333333;
 $brand-success: #00c775;
 $body-text: #4A4A4A;
-html {
-    font-size: 1em;
-    line-height: 1.4;
-    height: 100%;
-}
+$inactive: #D8D8D8;
 
 html,
 body {
@@ -26,6 +23,17 @@ body {
 
 [data-reactid=".0"] {
     height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Fira Sans";
+    font-weight: 300;
+    line-height: 1.5;
 }
 
 .navigation-bar {
@@ -206,14 +214,14 @@ nav ul {
             right: 0;
             left: 0;
         }
-    	.hero-cta {
-    		h1 {
-    			padding-bottom: 30px;
-    		}
-    		h2 {
-    			padding-bottom: 60px;
-    		}
-    	}
+        .hero-cta {
+            h1 {
+                padding-bottom: 30px;
+            }
+            h2 {
+                padding-bottom: 60px;
+            }
+        }
     }
 }
 
@@ -297,3 +305,75 @@ nav ul {
     }
 }
 
+.modal-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.modal-backdrop {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.btn-default {
+    color: $brand-primary;
+    background: #ffffff;
+    padding: 13px 60px 13px 60px;
+    border: 2px solid $inactive;
+}
+
+.modal-background {
+    @media only screen and (min-width: 480px) {
+        position: absolute;
+        height: auto;
+        width: auto;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    h3 {
+        font-weight: 400;
+        padding-bottom: 30px;
+    }
+    h4 {
+        padding-bottom: 30px;
+    }
+    p {
+        color: $brand-primary;
+        font-size: 20px;
+        font-weight: 400;
+    }
+    .btn {
+        margin: 0 auto;
+        max-width: 200px;
+    }
+    text-align: center;
+    padding: 20px 50px 20px 50px;
+    height: 100%;
+    width: 100%;
+    background: rgba(255, 255, 255, 1);
+    -webkit-box-shadow: 0 0 30px #BABABA;
+    -moz-box-shadow: 0 0 30px #BABABA;
+    box-shadow: 0 0 30px #BABABA;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding-box;
+    background-clip: padding-box;
+
+}
+
+.icon-row {
+    margin-bottom: 30px;
+}
+
+.twitter-icon, .facebook-icon {
+    height: 32px;
+    width: 32px;
+    margin: 15px;
+}
